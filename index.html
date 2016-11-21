@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Tic-Tac-Toe</title>
+<link rel='stylesheet' type='text/css' href='styles/ui.css'>
+</head>
+
+<body>
+	<div class='main-container'>
+		<div class='board'>
+			<!-- data-indx following cell divs represents cell index in 1D array representation -->
+			<div class='cell' data-indx="0"></div>
+			<div class='cell' data-indx="1"></div>
+			<div class='cell' data-indx="2"></div>
+			<div class='cell' data-indx="3"></div>
+			<div class='cell' data-indx="4"></div>
+			<div class='cell' data-indx="5"></div>
+			<div class='cell' data-indx="6"></div>
+			<div class='cell' data-indx="7"></div>
+			<div class='cell' data-indx="8"></div>
+		</div>
+		<div class='control'>
+			<!-- div.ingame displays in-game messages and controls -->
+			<div class='intial'>
+				<div class='start'>Start</div>
+			</div>
+
+			<!-- div.ingame displays in-game messages and controls -->
+			<div class='ingame' id="human">Du bist dran ...</div>
+			<div class='ingame' id="ai">
+				<p>Warte auf den Computer ...</p>
+			</div>
+			<div class='ingame' id="won">Yeah, du hast gewonnen!</div>
+			<div class='ingame' id="lost">Du hast leider verloren!</div>
+			<div class='ingame' id="draw">Unentschieden</div>
+			<div class='restart'>Nochmal</div>			
+		</div>
+	</div>
+
+	<script src="scripts/jquery-1.10.1.min.js"></script>
+	<script src="scripts/ui.js"></script>
+	<script src="scripts/game.js"></script>
+	<script src="scripts/ai.js"></script>
+	<script src="scripts/control.js"></script>
+
+</body>
+</html>
