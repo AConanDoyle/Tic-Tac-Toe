@@ -1,16 +1,16 @@
 var AIAction = function(pos) {
 
-	// public : the position on the board that the action would put the letter on
+	// public : the position on the board that the action would put the letter (x or O) on
 	this.movePosition = pos;
 
 	//public : the minimax value of the state that the action leads to when applied
 	this.minimaxVal = 0;
 
-	/*
-	 * public : applies the action to a state to get the next state
-	 * @param state [State]: the state to apply the action to
-	 * @return [State]: the next state
-	 */
+	
+	 // public : applies the action to a state to get the next state
+	 // @param state [State]: the state to apply the action to
+	 // @return [State]: the next state
+
 	this.applyTo = function(state) {
 		var next = new State(state);
 
@@ -26,12 +26,12 @@ var AIAction = function(pos) {
 	};
 };
 
-/*
- * public static function that defines a rule for sorting AIActions in ascending manner
- * @param firstAction [AIAction] : the first action in a pairwise sort
- * @param secondAction [AIAction]: the second action in a pairwise sort
- * @return [Number]: -1, 1, or 0
- */
+
+// public static function that defines a rule for sorting AIActions in ascending manner
+// @param firstAction [AIAction] : the first action in a pairwise sort
+// @param secondAction [AIAction]: the second action in a pairwise sort
+// @return [Number]: -1, 1, or 0
+
 AIAction.ASCENDING = function(firstAction, secondAction) {
 	if (firstAction.minimaxVal < secondAction.minimaxVal)
 		return -1; //indicates that firstAction goes before secondAction
@@ -41,12 +41,12 @@ AIAction.ASCENDING = function(firstAction, secondAction) {
 		return 0; //indicates a tie
 };
 
-/*
- * public static function that defines a rule for sorting AIActions in descending manner
- * @param firstAction [AIAction] : the first action in a pairwise sort
- * @param secondAction [AIAction]: the second action in a pairwise sort
- * @return [Number]: -1, 1, or 0
- */
+
+// public static function that defines a rule for sorting AIActions in descending manner
+// @param firstAction [AIAction] : the first action in a pairwise sort
+// @param secondAction [AIAction]: the second action in a pairwise sort
+// @return [Number]: -1, 1, or 0
+
 AIAction.DESCENDING = function(firstAction, secondAction) {
 	if (firstAction.minimaxVal > secondAction.minimaxVal)
 		return -1; //indicates that firstAction goes before secondAction
@@ -76,10 +76,10 @@ var AI = function() {
             var stateScore; // this stores the minimax value we'll compute
 
             if(state.turn === "X")
-            // X wants to maximize --> initialize to a value smaller than any possible score
+            	// X wants to maximize --> initialize to a value smaller than any possible score
                 stateScore = -1000;
             else
-            // O wants to minimize --> initialize to a value larger than any possible score
+            	// O wants to minimize --> initialize to a value larger than any possible score
                 stateScore = 1000;
 
             var availablePositions = state.emptyCells();
@@ -93,8 +93,8 @@ var AI = function() {
                 return nextState;
             });
 
-            /* calculate the minimax value for all available next states
-             * and evaluate the current state's value */
+            // calculate the minimax value for all available next states
+            // and evaluate the current state's value
             availableNextStates.forEach(function(nextState) {
                 var nextScore = minimaxValue(nextState);
                 if(state.turn === "X") {
@@ -113,10 +113,9 @@ var AI = function() {
         }
     }
 
-	/*
-	 * public method to specify the game the ai player will play @param _game
-	 * [Game] : the game the ai will play
-	 */
+	// public method to specify the game the ai player will play @param _game
+	// [Game] : the game the ai will play
+
 	this.plays = function(_game) {
 		game = _game;
 	};
