@@ -1,4 +1,4 @@
-// ui object encloses all UI related methods and attributes
+// ui object contained all UI related methods and attributes
 // constructor 
 var ui = {};
 
@@ -10,6 +10,7 @@ ui.currentView = "";
 
 // switchs the view on the UI depending on who's turn it switchs
 // @param turn [String]: the player to switch the view to
+
 ui.switchViewTo = function(turn) {
 
 	//helper function for async calling
@@ -45,8 +46,8 @@ ui.switchViewTo = function(turn) {
 	}
 };
 
-// places X or O in the specifed place in the board
-// @param index determoines the cell
+// places X or O in the specifed place on the board
+// @param index determines the cell
 // @param symbol [String]: X or O
 
 ui.insertAt = function(indx, symbol) {
@@ -65,6 +66,7 @@ ui.insertAt = function(indx, symbol) {
 // updates the view to an older history state
 // @param index determoines the cell
 // @param symbol [String]: X or O
+
 ui.updateBoard= function(indx, symbol) {
 	var board = $('.cell');
 	var targetCell = $(board[indx]);
