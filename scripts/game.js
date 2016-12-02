@@ -8,7 +8,7 @@ var Game = function(autoPlayer) {
 	// public : initialize the game current state to empty board configuration
 	this.currentState = new State();
 
-	//"E" stands for empty board cell; 
+	//"E" stands for empty board cell;
 	this.currentState.board = [ "E", "E", "E", "E", "E", "E", "E", "E", "E" ];
 
 	this.currentState.turn = "X"; //X plays first
@@ -44,7 +44,6 @@ var Game = function(autoPlayer) {
 				ui.switchViewTo("draw");
 		} else {
 			//the game is still running
-
 			if (this.currentState.turn === "X") {
 				ui.switchViewTo("human");
 			} else {
@@ -87,7 +86,7 @@ var State = function(old) {
 		this.turn = old.turn;
 	}
 		
-	// advances the turn in a the state     
+	// advances the turn in a the state
 	this.advanceTurn = function() {
 		this.turn = this.turn === "X" ? "O" : "X";
 	};
